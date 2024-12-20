@@ -10,12 +10,10 @@ print("Current working directory:", os.getcwd())
 print("Files in current directory:", os.listdir())
 print("Files in Data folder:", os.listdir('Data'))
 
-# Let's print the exact name of your CSV file
 data_files = os.listdir('Data')
 csv_files = [f for f in data_files if f.endswith('.csv')]
 print("\nCSV files found:", csv_files)
 
-# Now read the first CSV file found
 if csv_files:
     file_path = os.path.join('Data', csv_files[0])
     print(f"\nReading file: {file_path}")
@@ -23,7 +21,6 @@ if csv_files:
 else:
     raise FileNotFoundError("No CSV files found in Data directory")
 
-# Rest of your code remains the same...
 # Data preprocessing
 df['Date'] = pd.to_datetime(df['Date'])
 df.set_index('Date', inplace=True)
